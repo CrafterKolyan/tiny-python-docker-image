@@ -1,0 +1,15 @@
+FROM alpine as builder
+
+RUN apk add --no-cache python3
+WORKDIR /usr/lib/python3.8
+RUN find . -mindepth 1 | grep -v -E '\./(encodings|codecs|io|abc|site|os|stat|_collections_abc|posixpath|genericpath|_sitebuiltins)([/.].*)?$' | xargs rm -rf
+
+FROM scratch
+
+COPY --from=builder /usr/bin/python3 /
+COPY --from=builder /lib/ld-musl-x86_64.so.1 /lib/ld-musl-x86_64.so.1
+COPY --from=builder /usr/lib/libpython3.8.so.1.0 /usr/lib/libpython3.8.so.1.0
+
+COPY --from=builder /usr/lib/python3.8/ /usr/lib/python3.8/
+
+CMD ["/python3"]

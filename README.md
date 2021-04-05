@@ -4,7 +4,8 @@ The most lightweight python docker image possible
 ## Possible variants
 | Dockerfile   | Description | Size |
 | :----------- | :--- | :--: |
-| Dockerfile.scratch-full | Smallest Python image from scratch | 41.5 MB |
+| Dockerfile.scratch-minimal | Minimal Python image with almost no libraries from scratch | 6.08 MB |
+| Dockerfile.scratch-full | Smallest Python image with default libraries from scratch | 41.5 MB |
 | Dockerfile.python-alpine | Python Alpine-based Official | 44.7 MB |
 | Dockerfile.alpine | Alpine-based | 49.2 MB |
 | Dockerfile.ubuntu | Ubuntu-based | 106 MB |
