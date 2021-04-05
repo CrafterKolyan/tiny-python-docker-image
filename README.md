@@ -22,5 +22,5 @@ docker build -t tiny-python-docker-image . -f Dockerfile.python-alpine
 
 ## Running image
 ```bash
-docker container run --rm -it tiny-python-docker-image
+docker run --rm -it tiny-python-docker-image
 ```
