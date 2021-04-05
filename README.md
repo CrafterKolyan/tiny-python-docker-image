@@ -12,15 +12,15 @@ The most lightweight python docker image possible
 
 ## Building image
 ```bash
-docker build -t tiny-python . -f <Dockerfile name>
+docker build -t python-tiny . -f <Dockerfile name>
 ```
 For example:
 ```bash
-docker build -t tiny-python . -f Dockerfile.python-alpine
+docker build -t python-tiny . -f Dockerfile.python-alpine
 ```
 
 
 ## Running image
 ```bash
-docker run --rm -it tiny-python
+docker run --rm -it python-tiny
 ```
