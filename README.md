@@ -2,10 +2,12 @@
 The most lightweight python docker image possible
 
 ## Possible variants
-| Dockerfile   | Idea | Size |
+| Dockerfile   | Description | Size |
 | :----------- | :--- | :--: |
+| Dockerfile.python-alpine | Python Alpine-based Official | 44.7 MB |
 | Dockerfile.alpine | Alpine-based | 49.2 MB |
 | Dockerfile.ubuntu | Ubuntu-based | 112 MB |
+| Dockerfile.python | Python Ubuntu-based Official | 885 MB |
 
 ## Building image
 ```bash

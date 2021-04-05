@@ -1,0 +1,3 @@
+FROM python
+
+CMD ["python3"]
