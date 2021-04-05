@@ -15,7 +15,7 @@ docker build -t tiny-python-docker-image . -f <Dockerfile name>
 ```
 For example:
 ```bash
-docker build -t tiny-python-docker-image . -f Dockerfile.ubuntu2004
+docker build -t tiny-python-docker-image . -f Dockerfile.python-alpine
 ```
 
 
