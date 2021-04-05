@@ -1,5 +1,5 @@
 # Tiny Python Docker image
-The most lightweight python docker image possible
+The most lightweight Python 3 Docker image possible
 
 ## Possible variants
 | Dockerfile   | Description | Size |
@@ -20,7 +20,6 @@ For example:
 ```bash
 docker build -t python-tiny . -f Dockerfile.python-alpine
 ```
-
 
 ## Running image
 ```bash
