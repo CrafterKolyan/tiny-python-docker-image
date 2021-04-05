@@ -1,0 +1,3 @@
+FROM python:slim
+
+CMD ["python3"]
