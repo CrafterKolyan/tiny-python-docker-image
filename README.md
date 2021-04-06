@@ -12,7 +12,11 @@ The most lightweight Python 3 Docker image possible
 | Dockerfile.python-slim | Minimal packages needed to run python | 114 MB |
 | Dockerfile.python | Python Debian-based Official with a lot of packages | 885 MB |
 
-## Building image
+## Requirements
+- Docker
+
+## Usage
+### Building image
 ```bash
 docker build -t python-tiny . -f <Dockerfile name>
 ```
@@ -21,7 +25,15 @@ For example:
 docker build -t python-tiny . -f Dockerfile.python-alpine
 ```
 
-## Running image
+### Running image
 ```bash
 docker run --rm -it python-tiny
 ```
+
+## Technologies
+- Docker
+- `ldd` (prints the shared libraries required by each program or shared library specified on the command line): used to create `scratch-full` and `scratch-minimal` images.
+
+## Related links
+- https://xebia.com/blog/how-to-create-the-smallest-possible-docker-container-of-any-image/
+- https://xebia.com/blog/create-the-smallest-possible-docker-container/
