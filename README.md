@@ -37,3 +37,7 @@ docker run --rm -it python-tiny
 ## Related links
 - https://xebia.com/blog/how-to-create-the-smallest-possible-docker-container-of-any-image/
 - https://xebia.com/blog/create-the-smallest-possible-docker-container/
+
+## Related projects
+- https://github.com/jfloff/alpine-python
+- https://github.com/haizaar/docker-python-minimal
