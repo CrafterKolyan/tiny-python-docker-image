@@ -4,4 +4,4 @@ RUN apt-get update && \
     apt-get install --no-install-recommends python3 -y && \
     rm -rf /var/lib/apt/lists/*
 
-CMD ["python3"]
+ENTRYPOINT ["python3"]

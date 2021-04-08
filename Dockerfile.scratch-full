@@ -9,4 +9,4 @@ COPY --from=builder /lib/ld-musl-x86_64.so.1 /lib/ld-musl-x86_64.so.1
 COPY --from=builder /usr/lib/libpython3.8.so.1.0 /usr/lib/libpython3.8.so.1.0
 COPY --from=builder /usr/lib/python3.8 /usr/lib/python3.8
 
-CMD ["/python3"]
+ENTRYPOINT ["/python3"]
