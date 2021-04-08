@@ -3,7 +3,10 @@ Tiny Python Docker image
 
 The most lightweight Python 3 Docker image possible
 
-.. list-table:: Possible variants
+Possible variants
+-----------------
+
+.. list-table::
    :header-rows: 1
 
    * - Dockerfile
