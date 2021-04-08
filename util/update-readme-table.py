@@ -71,7 +71,7 @@ def get_filenames(dockerfiles):
 
 def get_docker_size(path, client):
     image, _ = client.images.build(path=os.path.dirname(path), dockerfile=os.path.basename(path), tag="tiny-python")
-    size = image.attrs['Size'] / (1024 * 1024)
+    size = image.attrs['Size'] / (1000 * 1000)
     version = client.containers.run(image, "--version", remove=True, stdout=True, stderr=False)
     version = version.decode('utf-8').strip().split()[1]
     return size, version

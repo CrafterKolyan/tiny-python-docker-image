@@ -9,13 +9,13 @@ Possible variants
 .. csv-table::
     :header: Dockerfile,Description,Size,Version
 
-    Dockerfile.scratch-minimal,Minimal Python image with almost no libraries from scratch,5.8 MB,3.8.8
-    Dockerfile.scratch-full,Smallest Python image with default libraries from scratch,39.56 MB,3.8.8
-    Dockerfile.python-alpine,Python Alpine-based Official,42.63 MB,3.9.4
-    Dockerfile.alpine,Alpine-based,46.9 MB,3.8.8
-    Dockerfile.ubuntu,Ubuntu-based,100.7 MB,3.8.5
-    Dockerfile.python-slim,Minimal packages needed to run python,109.1 MB,3.9.4
-    Dockerfile.python,Python Debian-based Official with a lot of packages,844.5 MB,3.9.4
+    Dockerfile.scratch-minimal,Minimal Python image with almost no libraries from scratch,6.082 MB,3.8.8
+    Dockerfile.scratch-full,Smallest Python image with default libraries from scratch,41.48 MB,3.8.8
+    Dockerfile.python-alpine,Python Alpine-based Official,44.7 MB,3.9.4
+    Dockerfile.alpine,Alpine-based,49.18 MB,3.8.8
+    Dockerfile.ubuntu,Ubuntu-based,105.6 MB,3.8.5
+    Dockerfile.python-slim,Minimal packages needed to run python,114.5 MB,3.9.4
+    Dockerfile.python,Python Debian-based Official with a lot of packages,885.5 MB,3.9.4
 
 Requirements
 ------------
