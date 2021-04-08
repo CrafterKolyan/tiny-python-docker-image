@@ -8,6 +8,7 @@ Possible variants
 
 .. csv-table::
     :header: Dockerfile,Description,Size
+    :align: center
 
     Dockerfile.scratch-minimal,Minimal Python image with almost no libraries from scratch,6.08 MB
     Dockerfile.scratch-full,Smallest Python image with default libraries from scratch,41.5 MB
