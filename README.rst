@@ -6,34 +6,16 @@ The most lightweight Python 3 Docker image possible
 Possible variants
 -----------------
 
-.. list-table::
-   :header-rows: 1
+.. csv-table::
+    :header: Dockerfile,Description,Size
 
-   * - Dockerfile
-     - Description
-     - Size
-
-   * - Dockerfile.scratch-minimal
-     - Minimal Python image with almost no libraries from scratch
-     - 6.08 MB
-   * - Dockerfile.scratch-full
-     - Smallest Python image with default libraries from scratch
-     - 41.5 MB
-   * - Dockerfile.python-alpine
-     - Python Alpine-based Official
-     - 44.7 MB
-   * - Dockerfile.alpine
-     - Alpine-based
-     - 49.2 MB
-   * - Dockerfile.ubuntu
-     - Ubuntu-based
-     - 106 MB
-   * - Dockerfile.python-slim
-     - Minimal packages needed to run python
-     - 114 MB
-   * - Dockerfile.python
-     - Python Debian-based Official with a lot of packages
-     - 885 MB
+    Dockerfile.scratch-minimal,Minimal Python image with almost no libraries from scratch,6.08 MB
+    Dockerfile.scratch-full,Smallest Python image with default libraries from scratch,41.5 MB
+    Dockerfile.python-alpine,Python Alpine-based Official,44.7 MB
+    Dockerfile.alpine,Alpine-based,49.2 MB
+    Dockerfile.ubuntu,Ubuntu-based,106 MB
+    Dockerfile.python-slim,Minimal packages needed to run python,114 MB
+    Dockerfile.python,Python Debian-based Official with a lot of packages,885 MB
 
 Requirements
 ------------
