@@ -88,7 +88,7 @@ def main(args):
             size, version = get_docker_size(dockerfile, client)
             sizes.append(size)
             versions.append(version)
-    table = pd.DataFrame({'Dockerfile': get_filenames(dockerfiles), 'Size': sizes, 'Python Version': versions})
+    table = pd.DataFrame({'Dockerfile': get_filenames(dockerfiles), 'Size': sizes, 'Version': versions})
     update_table(args.readme, table)
     return 0
 
