@@ -39,7 +39,7 @@ def merge_tables(current_table, new_table):
                                 suffixes=('_old', ''))
     table.drop(columns=[x for x in table.columns if x.endswith('_old')], inplace=True)
     table.sort_values('Size', inplace=True)
-    table['Size'] = table['Size'].apply(lambda x: f"{x:.4g}") + " MB"
+    table['Size'] = table['Size'].apply(lambda x: f"{x:.04g}") + " MB"
     return table
 
 
