@@ -38,7 +38,7 @@ For example:
 
 .. code-block:: bash
 
-    docker build -t python-tiny . -f Dockerfile.python-alpine
+    docker build -t python-tiny . -f Dockerfile.scratch-full
 
 Running image
 `````````````
