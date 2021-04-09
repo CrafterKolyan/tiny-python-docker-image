@@ -2,8 +2,8 @@ FROM alpine as builder
 
 RUN apk add --no-cache python3
 WORKDIR /usr/lib/python3.8
-RUN find __pycache__/ -name "*.cpython-38.opt-2.pyc" | awk '{print $1, $1}' | sed 's/ __pycache__\// /g' | sed 's/.cpython-38.opt-2//2' | xargs -n 2 mv
-RUN find . -maxdepth 1 -name "*.py" -delete
+RUN find . -name "*.cpython-38.opt-2.pyc" | awk '{print $1, $1}' | sed 's/__pycache__\///2' | sed 's/.cpython-38.opt-2//2' | xargs -n 2 mv
+RUN find . -name "*.py" -delete
 RUN find . -name "__pycache__" -delete
 
 FROM scratch
