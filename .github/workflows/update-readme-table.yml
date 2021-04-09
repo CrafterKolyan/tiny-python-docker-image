@@ -3,8 +3,8 @@ name: "Update README table"
 on:
   push:
   schedule:
-    # 1st and 15th days of each month at 4:30
-    - cron:  '30 4 1,15 * *'
+    # each day at 4:40
+    - cron:  '40 4 * * *'
   workflow_dispatch:
 
 jobs:
