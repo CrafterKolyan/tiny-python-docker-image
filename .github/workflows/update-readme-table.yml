@@ -8,8 +8,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  execute_all_notebooks:
-    name: "Execute all notebooks"
+  update_readme_table:
+    name: "Update README table"
     runs-on: ubuntu-latest
     
     steps:
