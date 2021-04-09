@@ -212,3 +212,6 @@ fabric.properties
 
 # IDEA folder
 .idea
+
+# Visual Studio Code folder
+.vscode
