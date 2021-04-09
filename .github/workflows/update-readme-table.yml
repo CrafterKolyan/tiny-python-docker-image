@@ -1,0 +1,55 @@
+name: "Update README table"
+
+on:
+  push:
+  schedule:
+    # 1st and 15th days of each month at 4:30
+    - cron:  '30 4 1,15 * *'
+  workflow_dispatch:
+
+jobs:
+  update_readme_table:
+    name: "Update README table"
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout to workspace
+      uses: actions/checkout@v2
+
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+        architecture: 'x64'
+
+    - name: Print all environment variables
+      run: printenv
+
+    - name: Set bot's name and email
+      run: |
+        git config --global user.name "Github Action"
+        git config --global user.email "action@github.com"
+
+    - name: Install requirements.txt
+      run: |
+        python -m pip install -U setuptools
+        python -m pip install -U pip
+        python -m pip install -r util/requirements.txt
+
+    - name: Update README.rst table
+      run: python util/update-readme-table.py README.rst .
+
+    - name: Commit changed README.rst
+      if: always()
+      run: |
+        git add README.rst && \
+        git commit -m "[Github Action] Update README table with valid information" && \
+        git checkout . && \
+        git pull origin ${GITHUB_REF##*/} --rebase --strategy-option=ours || \
+        true
+
+    - name: Push changes
+      uses: ad-m/github-push-action@v0.6.0
+      with:
+        branch: ${{ github.ref }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
