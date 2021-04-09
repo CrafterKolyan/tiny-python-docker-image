@@ -19,6 +19,7 @@ Possible variants
     Dockerfile.ubuntu,Ubuntu-based,105.6 MB,3.8.5
     Dockerfile.python-slim,Minimal packages needed to run python,114.5 MB,3.9.4
     Dockerfile.python,Python Debian-based Official with a lot of packages,885.5 MB,3.9.4
+    Dockerfile.haizaar-python-minimal,Stripped official python image (haizaar/docker-python-minimal),-,-
 
 Requirements
 ------------
