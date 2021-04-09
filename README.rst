@@ -11,6 +11,7 @@ Possible variants
 
 .. csv-table::
     :header: Dockerfile,Description,Size,Version
+    :widths: 10, 70, 10, 10
 
     Dockerfile.scratch-minimal,Minimal Python image with almost no libraries from scratch,6.082 MB,3.8.8
     Dockerfile.haizaar-python-minimal,Stripped official python image (haizaar/docker-python-minimal),31.94 MB,3.9.4

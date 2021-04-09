@@ -27,7 +27,7 @@ def find_table(readme):
     lines = list(map(str.strip, raw_lines))
     table_start = lines.index("", lines.index(".. csv-table::")) + 1
     table_end = lines.index("", table_start)
-    header = lines[table_start - 2][len(":header: "):]
+    header = lines[table_start - 3][len(":header: "):]
     table = [header] + lines[table_start:table_end]
     table = pd.read_csv(io.StringIO("\n".join(table)))
 
