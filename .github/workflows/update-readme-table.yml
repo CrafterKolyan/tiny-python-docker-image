@@ -43,7 +43,7 @@ jobs:
       if: always()
       run: |
         git add README.rst && \
-        git commit -m "[Github Action] Update README table with valid information" && \
+        git commit -m "[Github Action] Update README table with valid information"; \
         git checkout . && \
         git pull origin ${GITHUB_REF##*/} --rebase --strategy-option=ours || \
         true
