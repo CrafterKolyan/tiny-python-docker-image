@@ -43,10 +43,9 @@ jobs:
       if: always()
       run: |
         git add README.rst && \
-        git commit -m "[Github Action] Update README table with valid information" && \
+        (git commit -m "[Github Action] Update README table with valid information" || true) && \
         git checkout . && \
-        git pull origin ${GITHUB_REF##*/} --rebase --strategy-option=ours || \
-        true
+        git pull origin ${GITHUB_REF##*/} --rebase --strategy-option=ours
 
     - name: Push changes
       uses: ad-m/github-push-action@v0.6.0
