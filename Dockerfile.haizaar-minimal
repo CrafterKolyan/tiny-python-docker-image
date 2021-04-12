@@ -3,6 +3,8 @@
 
 FROM python:alpine as builder
 
+RUN apk add --no-cache binutils
+RUN find /usr/local -name '*.so' | xargs strip -s
 RUN pip uninstall -y pip
 RUN set -ex && \
     cd /usr/local/lib/python*/config-*-x86_64-linux-gnu/ && \
@@ -15,6 +17,7 @@ RUN rm -rf /usr/local/lib/python*/__pycache__/*
 RUN find /usr/local/include/python* -not -name pyconfig.h -type f -exec rm {} \;
 RUN find /usr/local/bin -not -name 'python*' \( -type f -o -type l \) -exec rm {} \;
 RUN rm -rf /usr/local/share/*
+RUN apk del binutils
 
 
 FROM alpine:latest as final
