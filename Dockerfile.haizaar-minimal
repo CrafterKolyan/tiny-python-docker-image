@@ -6,9 +6,9 @@ FROM python:alpine as builder
 RUN apk add --no-cache binutils
 RUN find /usr/local -name '*.so' | xargs strip -s
 RUN pip uninstall -y pip
-RUN set -ex && \
-    cd /usr/local/lib/python*/config-*-x86_64-linux-gnu/ && \
-    rm -rf *.o *.a
+# RUN set -ex && \
+#     cd /usr/local/lib/python*/config-*-x86_64-linux-gnu/ && \
+#     rm -rf *.o *.a
 RUN rm -rf /usr/local/lib/python*/ensurepip
 RUN rm -rf /usr/local/lib/python*/idlelib
 RUN rm -rf /usr/local/lib/python*/distutils/command
