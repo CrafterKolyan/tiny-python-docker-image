@@ -1,4 +1,4 @@
 docker~=6.0.0
-pandas~=1.5.1
+pandas~=2.0.1
 tqdm>=4.60.0
-requests<2.2.29
+requests
