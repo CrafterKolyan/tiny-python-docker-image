@@ -5,6 +5,7 @@ ARG PYTHON_VERSION
 
 RUN apk add --no-cache python3~=${PYTHON_VERSION}
 WORKDIR /usr/lib/python${PYTHON_VERSION}
+RUN python -m compileall -o 2 .
 RUN find . -name "*.cpython-*.opt-2.pyc" | awk '{print $1, $1}' | sed 's/__pycache__\///2' | sed 's/.cpython-[0-9]\{2,\}.opt-2//2' | xargs -n 2 mv
 RUN find . -name "*.py" -delete
 RUN find . -name "__pycache__" -delete
