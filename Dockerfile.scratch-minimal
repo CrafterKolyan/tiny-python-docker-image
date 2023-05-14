@@ -7,7 +7,7 @@ RUN apk add --no-cache python3~=${PYTHON_VERSION}
 WORKDIR /usr/lib/python${PYTHON_VERSION}
 RUN python -m compileall -o 2 .
 RUN find . -name "*.cpython-*.opt-2.pyc" | awk '{print $1, $1}' | sed 's/__pycache__\///2' | sed 's/.cpython-[0-9]\{2,\}.opt-2//2' | xargs -n 2 mv
-RUN find . -mindepth 1 | grep -v -E '^\./(encodings|io|abc|site|os|stat|_collections_abc|posixpath|genericpath|_sitebuiltins)([/.].*)?$' | xargs rm -rf
+RUN find . -mindepth 1 | grep -v -E '^\./(encodings)([/.].*)?$' | xargs rm -rf
 RUN find . -name "*.py" -delete
 RUN find . -name "__pycache__" -exec rm -r {} +
 
