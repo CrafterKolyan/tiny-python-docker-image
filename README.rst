@@ -15,11 +15,11 @@ Possible variants
 
     Dockerfile.scratch-minimal,Minimal Python image with almost no libraries from scratch,6.038 MB,3.11.6
     Dockerfile.scratch-full,Smallest Python image with default libraries from scratch,24.21 MB,3.11.6
-    Dockerfile.haizaar-minimal,Stripped official Python image (`haizaar/python-minimal`_),37.85 MB,3.12.0
+    Dockerfile.haizaar-minimal,Stripped official Python image (`haizaar/python-minimal`_),37.9 MB,3.12.0
     Dockerfile.alpine,Alpine-based,48.84 MB,3.11.6
-    Dockerfile.python-alpine,Python Alpine-based Official,51.73 MB,3.12.0
+    Dockerfile.python-alpine,Python Alpine-based Official,57.04 MB,3.12.0
     Dockerfile.ubuntu,Ubuntu-based,107.4 MB,3.10.12
-    Dockerfile.python-slim,Minimal packages needed to run python,129.7 MB,3.12.0
+    Dockerfile.python-slim,Minimal packages needed to run python,128.1 MB,3.12.0
     Dockerfile.python,Python Debian-based Official with a lot of packages,1018 MB,3.12.0
 
 Requirements
