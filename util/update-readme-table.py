@@ -78,7 +78,7 @@ def get_docker_size(path, client):
 
 
 def main(args):
-    dockerfiles = find_all_dockerfiles(args.folder, recursive=args.recursive)
+    dockerfiles = sorted(find_all_dockerfiles(args.folder, recursive=args.recursive))
     client = docker.from_env()
     sizes = []
     versions = []
