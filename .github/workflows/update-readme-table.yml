@@ -42,7 +42,7 @@ jobs:
     - name: Update README.rst table
       run: python util/update-readme-table.py README.rst .
 
-    - name: Commit changed README.rst
+    - name: Commit changed files
       if: always()
       run: |
         git add README.rst Dockerfile.scratch-minimal Dockerfile.scratch-full && \
