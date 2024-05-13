@@ -36,6 +36,9 @@ jobs:
         python -m pip install -U pip
         python -m pip install -r util/requirements.txt
 
+    - name: Update Dockerfile.scratch-minimal and Dockerfile.scratch-full
+      run: python util/update-scratch-dockerfile-python-versions.py Dockerfile.scratch-minimal Dockerfile.scratch-full
+
     - name: Update README.rst table
       run: python util/update-readme-table.py README.rst .
 
