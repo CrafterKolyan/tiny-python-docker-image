@@ -1,4 +1,4 @@
-name: "Update README table"
+name: "Update repository with latest information"
 
 on:
   push:
@@ -8,8 +8,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  update_readme_table:
-    name: "Update README table"
+  update_repo:
+    name: "Update repository with latest information"
     runs-on: ubuntu-latest
     
     steps:
@@ -45,8 +45,8 @@ jobs:
     - name: Commit changed README.rst
       if: always()
       run: |
-        git add README.rst && \
-        (git commit -m "[Github Action] Update README table with valid information" || true) && \
+        git add README.rst Dockerfile.scratch-minimal Dockerfile.scratch-full && \
+        (git commit -m "[Github Action] Update README table and Dockerfile.scratch with latest information" || true) && \
         git checkout . && \
         git pull origin ${GITHUB_REF##*/} --rebase --strategy-option=ours
 
