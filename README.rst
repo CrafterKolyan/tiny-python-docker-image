@@ -3,8 +3,8 @@ Tiny Python Docker image
 
 The most lightweight Python 3 Docker image possible.
 
-.. image:: https://github.com/CrafterKolyan/tiny-python-docker-image/actions/workflows/update-readme-table.yml/badge.svg?branch=main
-    :target: https://github.com/CrafterKolyan/tiny-python-docker-image/actions/workflows/update-readme-table.yml
+.. image:: https://github.com/CrafterKolyan/tiny-python-docker-image/actions/workflows/update-repository.yml/badge.svg?branch=main
+    :target: https://github.com/CrafterKolyan/tiny-python-docker-image/actions/workflows/update-repository.yml
 
 Possible variants
 -----------------
