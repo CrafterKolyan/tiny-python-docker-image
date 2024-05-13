@@ -69,6 +69,7 @@ def update_python_version(filepath, version):
 
 def main(filepaths):
     latest_python_version = find_latest_python_alpine_version()
+    print(f"Latest python version in alpine repository: {latest_python_version}")
     for filepath in filepaths:
         update_python_version(filepath, latest_python_version)
     return 0
