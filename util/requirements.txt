@@ -1,3 +1,5 @@
 docker~=7.0.0
 pandas~=2.2.2
 tqdm>=4.65.0
+
+requests<2.32.0
