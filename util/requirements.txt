@@ -2,4 +2,4 @@ docker~=7.1.0
 pandas~=2.2.2
 tqdm>=4.65.0
 
-requests<2.32.0
+packaging>=24.0
