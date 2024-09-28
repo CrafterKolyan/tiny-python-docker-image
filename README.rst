@@ -20,7 +20,7 @@ Possible variants
     Dockerfile.alpine,Alpine-based,48.18 MB,3.12.6
     Dockerfile.ubuntu,Ubuntu-based,116.7 MB,3.12.3
     Dockerfile.python-slim,Minimal packages needed to run python,124 MB,3.12.6
-    Dockerfile.python,Python Debian-based Official with a lot of packages,1013 MB,3.12.6
+    Dockerfile.python,Python Debian-based Official with a lot of packages,1014 MB,3.12.6
 
 Requirements
 ------------
