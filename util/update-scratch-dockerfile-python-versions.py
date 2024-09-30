@@ -27,9 +27,8 @@ def find_latest_python_alpine_version():
         case 0:
             raise ValueError(f"Didn't find options on the website response")
     matches = [x.strip() for x in matches]
-    options = [(x[1:], x) for x in matches if x.startswith("v")]
-    options = sorted(options, key=lambda x: version.parse(x[0]), reverse=True)
-    latest_stable_version = options[0][1]
+    options = [x for x in matches if x.startswith("v")]
+    latest_stable_version = max(options, key=lambda x: version.parse(x[1:]))
 
     print(f"Looking at alpine version: {latest_stable_version}")
     url = f"https://pkgs.alpinelinux.org/packages?name=python3&branch={latest_stable_version}&repo=main&arch=&maintainer="
