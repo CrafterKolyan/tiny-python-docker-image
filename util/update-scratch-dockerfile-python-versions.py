@@ -26,8 +26,10 @@ def find_latest_python_alpine_version():
     match len(matches):
         case 0:
             raise ValueError(f"Didn't find options on the website response")
-    options = [x for x in matches if x.startswith("v")]
-    latest_stable_version = options[0]
+    matches = [x.strip() for x in matches]
+    options = [(x[1:], x) for x in matches if x.startswith("v")]
+    options = sorted(options, key=lambda x: version.parse(x[0]), reverse=True)
+    latest_stable_version = options[0][1]
 
     print(f"Looking at alpine version: {latest_stable_version}")
     url = f"https://pkgs.alpinelinux.org/packages?name=python3&branch={latest_stable_version}&repo=main&arch=&maintainer="
@@ -40,6 +42,18 @@ def find_latest_python_alpine_version():
     match len(matches):
         case 0:
             raise ValueError(f"Didn't find versions on the website response")
+    matches = [x.strip() for x in matches]
+
+    tag_regex = re.compile(r"<[^>]*>([\s\S]*?)</[^>]*>")
+    new_matches = []
+    for x in matches:
+        match = tag_regex.fullmatch(x)
+        if match is None:
+            raise ValueError("Couldn't match on version code to find version text: {x!r}")
+        new_matches.append(match.group(1))
+    matches = new_matches
+    del new_matches
+
     versions = [version.parse(x) for x in matches]
     release_versions = set(x.release[:2] for x in versions)
     printable_versions = [str.join(".", map(str, x)) for x in release_versions]
