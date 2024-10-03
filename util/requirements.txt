@@ -1,4 +1,4 @@
 docker~=7.1.0
 packaging>=24.0
-pandas~=2.2.2
+pandas~=2.2.3
 tqdm>=4.65.0
