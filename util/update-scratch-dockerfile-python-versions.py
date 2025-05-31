@@ -30,9 +30,9 @@ def find_latest_python_alpine_version():
     options = [x for x in matches if x.startswith("v")]
     versions = sorted(options, key=lambda x: version.parse(x[1:]), reverse=True)
 
-    for version in versions:
-        print(f"Looking at alpine version: {version}")
-        url = f"https://pkgs.alpinelinux.org/packages?name=python3&branch={version}&repo=main&arch=&maintainer="
+    for version_ in versions:
+        print(f"Looking at alpine version: {version_}")
+        url = f"https://pkgs.alpinelinux.org/packages?name=python3&branch={version_}&repo=main&arch=&maintainer="
         print(url)
         response = session.get(url)
         text = response.text
