@@ -28,19 +28,24 @@ def find_latest_python_alpine_version():
             raise ValueError(f"Didn't find options on the website response")
     matches = [x.strip() for x in matches]
     options = [x for x in matches if x.startswith("v")]
-    latest_stable_version = max(options, key=lambda x: version.parse(x[1:]))
+    versions = sorted(options, key=lambda x: version.parse(x[1:]), reversed=True)
 
-    print(f"Looking at alpine version: {latest_stable_version}")
-    url = f"https://pkgs.alpinelinux.org/packages?name=python3&branch={latest_stable_version}&repo=main&arch=&maintainer="
-    print(url)
-    response = session.get(url)
-    text = response.text
-
-    version_regex = re.compile(r"<td[^>]* class=\"version\"[^>]*>([\s\S]*?)</td>")
-    matches = version_regex.findall(text)
-    match len(matches):
-        case 0:
-            raise ValueError(f"Didn't find versions on the website response")
+    for version in versions:
+        print(f"Looking at alpine version: {version}")
+        url = f"https://pkgs.alpinelinux.org/packages?name=python3&branch={version}&repo=main&arch=&maintainer="
+        print(url)
+        response = session.get(url)
+        text = response.text
+    
+        version_regex = re.compile(r"<td[^>]* class=\"version\"[^>]*>([\s\S]*?)</td>")
+        matches = version_regex.findall(text)
+        match len(matches):
+            case 0:
+                continue
+            case _:
+                break
+    else:
+        raise ValueError(f"Didn't find versions on the website response")
     matches = [x.strip() for x in matches]
 
     tag_regex = re.compile(r"<[^>]*>([\s\S]*?)</[^>]*>")
