@@ -28,7 +28,7 @@ def find_latest_python_alpine_version():
             raise ValueError(f"Didn't find options on the website response")
     matches = [x.strip() for x in matches]
     options = [x for x in matches if x.startswith("v")]
-    versions = sorted(options, key=lambda x: version.parse(x[1:]), reversed=True)
+    versions = sorted(options, key=lambda x: version.parse(x[1:]), reverse=True)
 
     for version in versions:
         print(f"Looking at alpine version: {version}")
