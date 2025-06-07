@@ -10,14 +10,14 @@ from tqdm.auto import tqdm
 
 
 def find_all_dockerfiles(path, recursive=False):
-    ipynb_regex = re.compile(r"^Dockerfile\..*$")
+    dockerfile_regex = re.compile(r"^Dockerfile\..*$")
     if not recursive:
-        dockerfiles = [os.path.join(path, x) for x in os.listdir(path) if ipynb_regex.fullmatch(x)]
+        dockerfiles = [os.path.join(path, x) for x in os.listdir(path) if dockerfile_regex.fullmatch(x)]
         dockerfiles = [x for x in dockerfiles if os.path.isfile(x)]
         return dockerfiles
     dockerfiles = []
     for address, dirs, files in os.walk(path, topdown=True):
-        dockerfiles.extend([os.path.join(address, x) for x in files if ipynb_regex.fullmatch(x)])
+        dockerfiles.extend([os.path.join(address, x) for x in files if dockerfile_regex.fullmatch(x)])
     return dockerfiles
 
 
