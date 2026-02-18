@@ -18,7 +18,7 @@ Possible variants
     Dockerfile.haizaar-minimal,Stripped official Python image (`haizaar/python-minimal`_),13.71 MB,3.14.3
     Dockerfile.python-alpine,Python Alpine-based Official,17.7 MB,3.14.3
     Dockerfile.alpine,Alpine-based,18.99 MB,3.12.12
-    Dockerfile.ubuntu,Ubuntu-based,42.79 MB,3.12.3
+    Dockerfile.ubuntu,Ubuntu-based,42.8 MB,3.12.3
     Dockerfile.python-slim,Minimal packages needed to run python,43.32 MB,3.14.3
     Dockerfile.python,Python Debian-based Official with a lot of packages,414.2 MB,3.14.3
 
